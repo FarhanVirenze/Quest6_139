@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.pam.quest6_139"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.pam.quest6_139"
