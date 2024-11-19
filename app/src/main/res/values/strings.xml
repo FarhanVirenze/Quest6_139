@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Quest6_139</string>
+    <string name="A">Kelas A</string>
+    <string name="B">Kelas B</string>
+    <string name="C">Kelas C</string>
+    <string name="D">Kelas D</string>
 </resources>
