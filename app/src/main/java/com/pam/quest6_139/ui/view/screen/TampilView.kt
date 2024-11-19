@@ -30,53 +30,87 @@ fun TampilView(
 ) {
     Column(
         modifier = Modifier
-            .fillMaxSize().background(colorResource(id = R.color.primary)),
+            .fillMaxSize()
+            .background(colorResource(id = R.color.primary)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         NavUniv()
-        Column (
-            modifier = Modifier.fillMaxSize()
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
                 .background(Color.White)
                 .padding(32.dp),
             horizontalAlignment = Alignment.CenterHorizontally
-        ){
+        ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Column (
-                ){
-                    Text("Nim:")
-                    Text(uiState.nim)
-                    Text("Nama:")
-                    Text(uiState.nama)
+                Column {
+                    Text(
+                        text = "Nim:",
+                        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                        fontSize = androidx.compose.ui.unit.TextUnit.Unspecified
+                    )
+                    Text(
+                        text = uiState.nim,
+                        fontStyle = androidx.compose.ui.text.font.FontStyle.Italic
+                    )
+                    Text(
+                        text = "Nama:",
+                        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
+                    )
+                    Text(
+                        text = uiState.nama,
+                        fontStyle = androidx.compose.ui.text.font.FontStyle.Italic
+                    )
                 }
-                Column (
-                ){
-                    Text(uiState.email)
+                Column {
+                    Text(
+                        text = uiState.email,
+                        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
+                    )
                 }
             }
             Spacer(modifier = Modifier.padding(16.dp))
-            Column (
+            Column(
                 modifier = Modifier.fillMaxWidth()
-            ){
-                Text("Matakuliah yang diambil:")
-                Text(uiState.namaMatakuliah)
-                Row(){
-                    Text(text = "Kelas:")
-                    Text(uiState.kelas)
+            ) {
+                Text(
+                    text = "Matakuliah yang diambil:",
+                    fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
+                )
+                Text(
+                    text = uiState.namaMatakuliah,
+                    fontStyle = androidx.compose.ui.text.font.FontStyle.Italic
+                )
+                Row {
+                    Text(
+                        text = "Kelas:",
+                        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
+                    )
+                    Text(
+                        text = uiState.kelas,
+                        fontStyle = androidx.compose.ui.text.font.FontStyle.Italic
+                    )
                 }
             }
             Spacer(modifier = Modifier.padding(32.dp))
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
-            ){
-                Button(onClick = {onBackButtonClicked()}) {
-                    Text(text = "Kembali")
+            ) {
+                Button(onClick = { onBackButtonClicked() }) {
+                    Text(
+                        text = "Kembali",
+                        fontWeight = androidx.compose.ui.text.font.FontWeight.Medium
+                    )
                 }
-                Button(onClick = {onResetButtonClicked()}) {
-                    Text(text = "Reset")
+                Button(onClick = { onResetButtonClicked() }) {
+                    Text(
+                        text = "Reset",
+                        fontWeight = androidx.compose.ui.text.font.FontWeight.Medium
+                    )
                 }
             }
         }
