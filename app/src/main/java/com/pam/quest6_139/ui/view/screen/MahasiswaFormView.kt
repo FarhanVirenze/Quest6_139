@@ -17,6 +17,7 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -45,44 +46,50 @@ fun MahasiswaFormView(
     var nama by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
 
-    val listData : MutableList<String> = mutableListOf(nim, nama, email)
-    Column (
-        modifier = Modifier.
-        fillMaxSize().
-        background(color = colorResource(id = R.color.primary)),
+    val listData: MutableList<String> = mutableListOf(nim, nama, email)
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = colorResource(id = R.color.primary)),
         horizontalAlignment = Alignment.CenterHorizontally
-    ){
+    ) {
         NavUniv()
         Spacer(modifier = Modifier.padding(top = 16.dp))
-        Box (
-            modifier = Modifier.background(
-                color = Color.White,
-                shape = RoundedCornerShape(topStart = 15.dp, topEnd = 15.dp)
-            ).
-            fillMaxSize()
-        ){
-            Column (
-                modifier = Modifier.fillMaxSize().padding(16.dp),
+        Box(
+            modifier = Modifier
+                .background(
+                    color = Color.White,
+                    shape = RoundedCornerShape(topStart = 15.dp, topEnd = 15.dp)
+                )
+                .fillMaxSize()
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
-            ){
+            ) {
                 Text(
                     text = "Masukan Data kamu",
                     fontWeight = FontWeight.Bold,
-                    fontSize = 19.sp
+                    fontSize = 19.sp,
+                    style = MaterialTheme.typography.headlineSmall
                 )
                 Text(
                     text = "isi sesuai data yang kamu daftarkan",
-                    fontWeight = FontWeight.Light
+                    fontWeight = FontWeight.Light,
+                    style = MaterialTheme.typography.bodyMedium
                 )
                 OutlinedTextField(
                     modifier = Modifier.fillMaxWidth(),
                     value = nim,
-                    onValueChange = {nim = it},
+                    onValueChange = { nim = it },
                     label = { Text(text = "Nomor Induk Mahasiswa") },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Filled.Info,
-                            contentDescription = "nim"
+                            contentDescription = "nim",
                         )
                     },
                     keyboardOptions = KeyboardOptions(
@@ -95,12 +102,12 @@ fun MahasiswaFormView(
                 OutlinedTextField(
                     modifier = Modifier.fillMaxWidth(),
                     value = nama,
-                    onValueChange = {nama = it},
+                    onValueChange = { nama = it },
                     label = { Text(text = "Nama Mahasiswa") },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Filled.Person,
-                            contentDescription = "nama"
+                            contentDescription = "nama",
                         )
                     },
                     keyboardOptions = KeyboardOptions(
@@ -113,12 +120,12 @@ fun MahasiswaFormView(
                 OutlinedTextField(
                     modifier = Modifier.fillMaxWidth(),
                     value = email,
-                    onValueChange = {email = it},
+                    onValueChange = { email = it },
                     label = { Text(text = "Email Mahasiswa") },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Filled.Email,
-                            contentDescription = "email"
+                            contentDescription = "email",
                         )
                     },
                     keyboardOptions = KeyboardOptions(
@@ -132,12 +139,12 @@ fun MahasiswaFormView(
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
-                ){
-                    Button(onClick = {onBackButtonClicked()}) {
-                        Text(text = "Kembali")
+                ) {
+                    Button(onClick = { onBackButtonClicked() }) {
+                        Text(text = "Kembali", color = Color.White)
                     }
-                    Button(onClick = {onSubmitButtonClicked(listData)}) {
-                        Text(text = "Simpan")
+                    Button(onClick = { onSubmitButtonClicked(listData) }) {
+                        Text(text = "Simpan", color = Color.White)
                     }
                 }
             }
