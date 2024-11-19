@@ -1,13 +1,13 @@
-<h1>Preview</h1>
+# Preview
 
-<h2>Tampilan SplashView (Halaman 1)</h2>
-![Halaman 1](https://github.com/user-attachments/assets/a22dbc0a-4193-462c-8a78-6d81ea3186e0)
+## Tampilan SplashView (Halaman 1)
+![Halaman 1](https://raw.githubusercontent.com/username/repository/branch/assets/splashview.png)
 
-<h2>Tampilan MahasiswaFormView (Halaman 2)</h2>
-![Halaman 2](https://github.com/user-attachments/assets/bc211a21-8db2-4189-b753-1f6b9b4cc0cc)
+## Tampilan MahasiswaFormView (Halaman 2)
+![Halaman 2](https://raw.githubusercontent.com/username/repository/branch/assets/mahasiswaformview.png)
 
-<h2>Tampilan MataKuliahView (Halaman 3)</h2>
-![Halaman 3](https://github.com/user-attachments/assets/bab9d0f4-b6fc-443d-9d31-09cb15dabf25)
+## Tampilan MataKuliahView (Halaman 3)
+![Halaman 3](https://raw.githubusercontent.com/username/repository/branch/assets/matakuliahview.png)
 
-<h2>Tampilan TampilVieww (Halaman 4)</h2>
-![Halaman 4](https://github.com/user-attachments/assets/4aa025d2-bbce-407a-95c3-9ffa38a1cde1)
+## Tampilan TampilView (Halaman 4)
+![Halaman 4](https://raw.githubusercontent.com/username/repository/branch/assets/tampilview.png)
