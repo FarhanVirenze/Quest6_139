@@ -26,9 +26,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.pam.quest6_139.ui.model.Mahasiswa
 import com.pam.quest6_139.ui.view.screen.part.NavUniv
 
@@ -36,48 +38,73 @@ import com.pam.quest6_139.ui.view.screen.part.NavUniv
 fun MatakuliahView(
     uiState: Mahasiswa,
     onSimpanButtonClicked: (MutableList<String>) -> Unit
-){
+) {
     var namamatakuliah by remember { mutableStateOf("") }
     var kelas by remember { mutableStateOf("") }
     val list = listOf("A", "B", "C", "D")
-    val listData : MutableList<String> = mutableListOf(namamatakuliah, kelas)
+    val listData: MutableList<String> = mutableListOf(namamatakuliah, kelas)
+
     Column(
         modifier = Modifier
-            .fillMaxSize().background(colorResource(id = com.pam.quest6_139.R.color.primary)),
+            .fillMaxSize()
+            .background(colorResource(id = com.pam.quest6_139.R.color.primary)),
         horizontalAlignment = Alignment.CenterHorizontally
-    ){
+    ) {
         NavUniv()
         Column(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
                 .background(Color.White, shape = RoundedCornerShape(topStart = 15.dp, topEnd = 15.dp))
                 .padding(16.dp)
-        ){
+        ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Column (
-
-                ){
-                    Text("Nim:")
-                    Text(uiState.nim)
-                    Text("Nama:")
-                    Text(uiState.nama)
+                Column {
+                    Text(
+                        text = "Nim:",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 14.sp
+                    )
+                    Text(
+                        text = uiState.nim,
+                        fontWeight = FontWeight.Normal,
+                        fontSize = 14.sp
+                    )
+                    Text(
+                        text = "Nama:",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 14.sp
+                    )
+                    Text(
+                        text = uiState.nama,
+                        fontWeight = FontWeight.Normal,
+                        fontSize = 14.sp
+                    )
                 }
-                Column (
-                ){
-                    Text(uiState.email)
+                Column {
+                    Text(
+                        text = uiState.email,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 14.sp
+                    )
                 }
             }
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
                 value = namamatakuliah,
-                onValueChange = {namamatakuliah = it},
-                label = { Text(text = "Mata Kuliah") },
+                onValueChange = { namamatakuliah = it },
+                label = {
+                    Text(
+                        text = "Mata Kuliah",
+                        fontWeight = FontWeight.Bold
+                    )
+                },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Filled.Edit,
-                        contentDescription = "Mata Kuliah"
+                        contentDescription = "Mata Kuliah",
                     )
                 },
                 keyboardOptions = KeyboardOptions(
@@ -87,24 +114,27 @@ fun MatakuliahView(
                 singleLine = true,
                 shape = RoundedCornerShape(50.dp)
             )
-            Column(){
+            Column {
                 list.forEach { Selected ->
-                    Row (
+                    Row(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         RadioButton(
                             selected = kelas == Selected,
-                            onClick = {kelas = Selected}
+                            onClick = { kelas = Selected }
                         )
-                        Text(text = Selected)
+                        Text(
+                            text = Selected,
+                            fontWeight = FontWeight.Normal
+                        )
                     }
                 }
             }
             Button(
-                onClick = {onSimpanButtonClicked(listData)},
+                onClick = { onSimpanButtonClicked(listData) },
                 modifier = Modifier.fillMaxWidth()
-            ){
-                Text(text = "Simpan")
+            ) {
+                Text(text = "Simpan", color = Color.White)
             }
         }
     }
